@@ -19,3 +19,5 @@ var greeting = createGreeting("Hello", "Angie");
 
 // Logs "Hello, Angie!";
 greet(greeting);
+
+// cannot declare a function with arrow function method

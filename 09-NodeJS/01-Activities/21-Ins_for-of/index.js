@@ -5,6 +5,11 @@ for (const song of songs) {
   console.log(song);
 }
 
+
+
+//for in is for looping through objects
+//for of is for looping through arrays
+
 /* Output:
   Bad Guy
   The Wheels on the Bus

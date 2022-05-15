@@ -16,7 +16,8 @@ moviePatrons.forEach(patron => console.log(patron.age));
 // 2.
 
 // Filter returns a new array containing only elements whose callback returns a truthy value
-
+//this makes a sopy and doens't modify the original
+//filter removesz
 const canWatchRatedR = moviePatrons.filter(function(patron) {
   return patron.age > 17;
 });

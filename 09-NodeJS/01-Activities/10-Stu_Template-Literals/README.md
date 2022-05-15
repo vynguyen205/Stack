@@ -6,7 +6,7 @@ Work with a partner to implement the following user story:
 
 ## Acceptance Criteria
 
-* It's done when I have created a `music` object in `Unsolved/index.js`.
+* It' done when I have created a `music` object in `Unsolved/insdex.js`.
 
 * It's done when I have added `title`, `artist`, and `album` properties to the `music` object.
 
@@ -22,7 +22,8 @@ Work with a partner to implement the following user story:
 
 If you have completed this activity, work through the following challenge with your partner to further your knowledge:
 
-* It's easy to get confused about which syntax belongs to which technology. The dollar sign (`$`) is used a lot in JavaScript&mdash;what are some other places you have seen the dollar sign used?
+* It's easy to get confused about which syntax belongs to which technology. The dollar sign (`$`) is used a lot in JavaScript&mdash;what are some other places you have seen the dollar sign used? 
+
 
 Use [Google](https://www.google.com) or another search engine to research this.
 

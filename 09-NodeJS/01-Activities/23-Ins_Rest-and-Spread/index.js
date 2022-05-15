@@ -28,3 +28,7 @@ const dragons = ["Drogon", "Viserion", "Rhaegal"];
 const weapons = ["dragonglass", ...dragons, "wildfire"]; // notice the spread operator ...dragons
 
 console.log(weapons); // prints ["dragonglass", "Drogon", "Viserion", "Rhaegal", "wildfire"]
+
+
+// rest is for creating new variable
+//spread 

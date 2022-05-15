@@ -63,13 +63,13 @@ var netflixQueue = {
     "Eternal Sunshine of the Spotless Mind",
     "Fight Club"
   ],
-  watchMovie: () => {
+  watchMovie: function () {
     this.queue.pop();
   },
-  addMovie: (movie) => {
+  addMovie: function (movie) {
     this.queue.unshift(movie);
   },
-  printQueue: () => {
+  printQueue: function () {
     var list = "";
     for (var i = this.queue.length - 1; i >= 0; i--) {
       var currentMovie = this.queue[i];
@@ -89,3 +89,10 @@ console.log("\nAdding a movie!\n");
 netflixQueue.addMovie("Black Swan");
 console.log("Printing movie queue!\n");
 netflixQueue.printQueue();
+
+function addTwoNumbers(a,b) {
+  return a + b;
+}
+
+const addTwoNumbers = (a,b) => a + b; //implicit is implying, so we don't have to put return.
+// with {} then it is a explicit return, and without is implicit return

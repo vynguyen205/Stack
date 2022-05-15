@@ -5,6 +5,8 @@ const arya = {
   allegiance: "House Stark"
 };
 
+//the back ticks help to concat everything tgt
+//it's called literal template
 const greeting = `My name is ${arya.first}!
 I am loyal to ${arya.allegiance}.`;
 
