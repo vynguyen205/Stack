@@ -12,6 +12,17 @@ function getApi() {
       // Use the console to examine the response
       console.log(data);
       // TODO: Loop through the data and generate your HTML
+      for(var i = 0; i < 5; i++) {
+        console.log(data[i]);
+        var gitHub = document.createElement("h3")
+        gitHub.textContent = data[i].url;
+        gitHub.href = data[i].url;
+        userContainer.append(gitHub);
+
+        var userName = document.createElement("p");
+        userName.textContent = data[i].login;
+        userContainer.append(userName);
+      }
     });
 }
 fetchButton.addEventListener('click', getApi);
