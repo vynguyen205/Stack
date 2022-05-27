@@ -17,6 +17,7 @@ function Student(first, last, age) {
     // Ex. 95 => 'A'
     if (typeof input === 'number') {
       // TODO: Add logic here to return a single letter grade
+<<<<<<< HEAD
       if(inRange(input, 90, 100)){
         (response = "A")
       }else if(inRange(input, 80, 89)){
@@ -31,10 +32,15 @@ function Student(first, last, age) {
       return response;
     }
   }
+=======
+      return response;
+    }
+>>>>>>> 40197902a237d56700eab49478b04f4f0e3f60f4
     // Return a range if a letter grade was passed
     // Ex. 'A' => '90 - 100'
     if (typeof input === 'string') {
       // TODO: Add logic here to return range as a string
+<<<<<<< HEAD
       switch (input.toUpperCase()) {
         case "A":
           return "90 - 100";
@@ -49,6 +55,8 @@ function Student(first, last, age) {
         default:
           return "NOT A VALID GRADE"
       };
+=======
+>>>>>>> 40197902a237d56700eab49478b04f4f0e3f60f4
       return response;
     }
   };

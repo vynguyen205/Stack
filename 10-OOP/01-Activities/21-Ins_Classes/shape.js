@@ -6,6 +6,7 @@ class Shape {
   }
 
   printInfo() {
+    
     console.log(`Area: ${this.area}`);
     console.log(`Perimeter: ${this.perimeter}`);
   }
