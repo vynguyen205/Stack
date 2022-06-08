@@ -1,0 +1,28 @@
+NOTES
+
+WHAT ARE THESE DOING? 
+** res.send ()
+
+- WE ARE SENDING SOMETHNG FROM THE API TO THE CLIENT SIDE
+___
+
+** res.sendFile()
+
+- WE USUALY HAVE A PUBLIC FOLDER THAT HAS A FILE SUCH AS INDEX.HTML. USE THE RELATIVE
+PATH TO GET TO THE FILE WE WANT TO SEND. 
+
+EX: res.sendFile("./public/index.html") 
+
+this is an absolute path, which is not very good. 
+
+-- what we can do, is const path = require('path')
+res.sendFile(path.join(__dirname, "./public/index.html"))
+
+
+- THE RESPONSE IS SENDING THE FILE THAT WE HAVE FROM THE SERVER SIDE TO THE
+CLIENT'S SIDE.
+
+** res.json()
+
+-- always a good thing to send it as an object. 
+    res.json({test: "OK!"})

@@ -4,11 +4,13 @@ const express = require('express');
 const tipsRouter = require('./tips');
 const feedbackRouter = require('./feedback');
 // TODO: import your diagnostics route
+const diagnosticsRouter = require('./diagnostics');
 
-const app = express();
+const router = express();
 
-app.use('/tips', tipsRouter);
-app.use('/feedback', feedbackRouter);
+router.use('/tips', tipsRouter);
+router.use('/feedback', feedbackRouter);
 // TODO: Initialize diagnostics route
+router.use('/diagnostics', diagnosticsRouter);
 
-module.exports = app;
+module.exports = router;

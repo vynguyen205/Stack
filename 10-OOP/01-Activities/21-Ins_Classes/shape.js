@@ -12,6 +12,13 @@ class Shape {
   }
 }
 
-const shape = new Shape(25, 25);
+const square = new Shape(25, 25);
+const rectangle = new Shape(50, 100);
 
-shape.printInfo();
+square.printInfo();
+rectangle.printInfo();
+
+const date = new Date();
+console.log(date.toDateString())
+
+let array = new Array() && new Number() && new String()

@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const { clog } = require('./middleware/clog');
+//this is api router middleware
 const api = require('./routes/index.js');
 
 const PORT = process.env.port || 3001;
@@ -26,6 +27,10 @@ app.get('/', (req, res) =>
 app.get('/feedback', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/pages/feedback.html'))
 );
+
+app.use('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/public/index.html'));
+});
 
 app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT} 🚀`)

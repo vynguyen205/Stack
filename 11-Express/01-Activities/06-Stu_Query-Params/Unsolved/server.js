@@ -12,60 +12,60 @@ const sortHelper = (type) =>
 
 // TODO: Add a comment describing the functionality of this route
 
-app.get('/api/terms/', (req, res) => {
-  // TODO: Add a comment describing the req.query object
-
-  const hasQuery = Object.keys(req.query).length > 0;
-
-  if (hasQuery && req.query.sort === 'dsc') {
-    return res.json(sortHelper('dsc'));
-  }
-
-  if (hasQuery && req.query.sort === 'asc') {
-    return res.json(sortHelper('asc'));
-  }
-
-  // If there is no query parameter, return terms
-  return res.json(termData);
-});
+//express is running/getting the path of the URl
+// This route path will match requests to the root route, /.
 
 // TODO: Add a comment describing what this route will return
-
-app.get('/api/term/:term', (req, res) => {
-  // TODO: Add a comment describing the content of req.params in this instance
-
-  const requestedTerm = req.params.term.toLowerCase();
-
-  for (let i = 0; i < termData.length; i++) {
-    if (requestedTerm === termData[i].term.toLowerCase()) {
-      return res.json(termData[i]);
+app.get('/api/term/:term?', (req, res) => {
+  //  IF THERE IS NO PARAM TERM
+    // TODO: Add a comment describing the content of req.params in this instance
+    if (!req.params.term) {
+      const hasQuery = Object.keys(req.query).length > 0;
+  
+      if (hasQuery && req.query.sort === 'dsc') {
+        return res.json(sortHelper('dsc'));
+      }
+  
+      if (hasQuery && req.query.sort === 'asc') {
+        return res.json(sortHelper('asc'));
+      }
+      res.json(termData);
     }
-  }
-
-  // Return a message if the term doesn't exist in our DB
-  return res.json('No term found');
-});
-
-// TODO: Add a comment describing what this route will return
-
-app.get('/api/terms/:category', (req, res) => {
-  const requestedCategory = req.params.category.toLowerCase();
-  const result = [];
-
-  for (let i = 0; i < termData.length; i++) {
-    const currentTermCategory = termData[i].category;
-    if (requestedCategory === currentTermCategory) {
-      result.push(termData[i]);
+    const requestedTerm = req.params.term.toLowerCase();
+  
+  
+  //IF THERE IS A PARAM TERM
+    const hasQuery = Object.keys(req.query).length > 0;
+    if (hasQuery && req.query.sort === 'dsc') {
+      sortHelper('dsc')
     }
-  }
-  return res.json(result);
-});
+    if (hasQuery && req.query.sort === 'asc') {
+      sortHelper('asc')
+    }
+    const filteredData = termData.filter(item => item.category.toLocaleLowerCase() === requestedTerm)
+    if(filteredData.length) return res.json(filteredData)
+    return res.json('No term found');
+    // this is just a test line
+    // return res.sendFile()
+  });
 
+  //you can set this to be an error page, where it will display can't find anything if the usr click something wrong
+  app.get('/api/*', (req, res) => {
+    
+    // const categories = termData.map((term) => term.category);
+    
+    const result = "Nick is cool!"
+    
+    return res.json(result);
+  });
+  
 // TODO: Add a comment describing what this route will return
-
+//this is returning a new array that only has the categories 
 app.get('/api/categories', (req, res) => {
+  //.map is calling the defined function and returns it in a new array
   const categories = termData.map((term) => term.category);
-
+  //.filter is returning a new array that meets the condition specified. 
+  //this filters out only the categories
   const result = categories.filter((cat, i) => categories.indexOf(cat) === i);
 
   return res.json(result);
