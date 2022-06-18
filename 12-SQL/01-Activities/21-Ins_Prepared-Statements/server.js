@@ -16,15 +16,19 @@ const db = mysql.createConnection(
     // MySQL username,
     user: 'root',
     // MySQL password
-    password: '',
+    password: 'root',
+    port: '8889',
     database: 'courses_db'
   },
-  console.log(`Connected to the courses_db database.`)
+  
 );
 
 // Hardcoded query: DELETE FROM course_names WHERE id = 3;
-
+// ? is a placeholder for the id, which is 3 in this case that can be passed in later. 
+// you can use ? as many times as you want.
 db.query(`DELETE FROM course_names WHERE id = ?`, 3, (err, result) => {
+  // if you want to pass in multiple paarameters, you can use an array.
+  // db.query(`DELETE FROM course_names WHERE id = ? AND name = ?`, [3, 'JavaScript'], (err, result) => {
   if (err) {
     console.log(err);
   }

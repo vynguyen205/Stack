@@ -1,4 +1,5 @@
 # 🏗️ Use Primary Key and Foreign Key to Define Relationship Between Tables
+<!-- FOREGIN KEY IS A CONSTRAINT THAT ALLOWS US TO CONNECT IT TO ANOTHER TABLE -->
 
 Work with a partner to implement the following user story:
 

@@ -7,6 +7,7 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+//creating connection between database and the code itself
 const db = mysql.createConnection(
   {
     host: 'localhost',
@@ -17,7 +18,7 @@ const db = mysql.createConnection(
   console.log(`Connected to the books_db database.`)
 );
 
-
+//COUNT is returns the number of rows in a table satisfying the criteria specified in the WHERE clause.
 db.query('SELECT COUNT(id) AS total_count FROM favorite_books GROUP BY in_stock', function (err, results) {
   console.log(results);
 });

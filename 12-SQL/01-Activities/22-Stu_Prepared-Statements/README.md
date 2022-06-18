@@ -38,6 +38,8 @@ If you have completed this activity, work through the following challenge with y
 
 * How can you set user-defined values using a MySQL statement?
 
+ <!-- You can use either := or = as the assignment operator in the SET statement -->
+
 Use [Google](https://www.google.com) or another search engine to research this.
 
 ---
