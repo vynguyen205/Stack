@@ -1,6 +1,9 @@
 const router = require('express').Router();
 const Book = require('../../models/Book');
 
+//METHODS
+/* UPDATE METHOD: update tablename SET key1=val1, key2=value2 WHERE isbn = [some digit]*/
+
 // GET all books
 router.get('/', (req, res) => {
   // Get all books from the book table
@@ -12,6 +15,7 @@ router.get('/', (req, res) => {
 // GET a book
 router.get('/:isbn', (req, res) => {
   // Get one book from the book table
+  //returning the first one that it finds
   Book.findOne(
     {
       // Gets the book based on the isbn given in the request parameters
@@ -27,6 +31,8 @@ router.get('/:isbn', (req, res) => {
 // Updates book based on its isbn
 router.put('/:isbn', (req, res) => {
   // Calls the update method on the Book model
+  //this method takes in 2 params: 1, object you are replacing the information with, 2. always put a where clause here. 
+
   Book.update(
     {
       // All the fields you can update and the data attached to the request body.
@@ -39,6 +45,7 @@ router.put('/:isbn', (req, res) => {
     },
     {
       // Gets the books based on the isbn given in the request parameters
+      //this is to prevent the entire database to be updated wrong
       where: {
         isbn: req.params.isbn,
       },

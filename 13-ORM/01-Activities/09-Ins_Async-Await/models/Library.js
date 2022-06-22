@@ -1,42 +1,41 @@
-const { Model, DataTypes, INTEGER } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Book extends Model {}
+class Library extends Model {}
 
-Book.init(
+Library.init(
   {
-    book_id: {
+    location_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: true
     },
-    title: {
+    name: {
       type: DataTypes.STRING
     },
-    author: {
+    location: {
       type: DataTypes.STRING
     },
-    isbn: {
-      type: DataTypes.STRING
-    },
-    pages: {
+    amount_of_books: {
       type: DataTypes.INTEGER
     },
-    edition: {
+    book_capacity: {
       type: DataTypes.INTEGER
     },
-    is_paperback: {
+    year_built: {
+      type: DataTypes.INTEGER
+    },
+    is_accessible: {
       type: DataTypes.BOOLEAN
     }
   },
   {
     sequelize,
     timestamps: false,
+    freezeTableName: true,
     underscored: true,
-    modelName: 'book',
-    freezeTableName: true
-
+    modelName: 'library'
   }
 );
 
-module.exports = Book;
+module.exports = Library;

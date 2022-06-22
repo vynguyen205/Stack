@@ -23,6 +23,8 @@ router.post('/', (req, res) => {
 
 // CREATE multiple books
 router.post('/seed', (req, res) => {
+  //THIS IS A PASSWORD/TOKEN THAT PREVENTS PPL FROM JUST INJECTING RANDOM INFO INTO OUR DATABASE
+  if (req.headers.authorization === "TUNA IS THE BEST") {
   // Multiple rows can be created with `bulkCreate()` and an array
   // This could also be moved to a separate Node.js script to ensure it only happens once
   Book.bulkCreate([
@@ -81,6 +83,17 @@ router.post('/seed', (req, res) => {
     .catch((err) => {
       res.json(err);
     });
+}else {
+  res.json("NOT AUTHORIZE TO SEED DB!")
+}
 });
+
+//creating aroute that reads from boolks table
+router.get('/allbooks', (req,res) => {
+  //SELECT * FROM books
+  Book.findAll().then(bookData => res.json(bookData)).catch((err) => {
+    res.json(err);
+  });
+})
 
 module.exports = router;

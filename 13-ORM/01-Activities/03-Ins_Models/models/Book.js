@@ -8,6 +8,7 @@ Book.init(
   // Define fields/columns on model
   // An `id` is automatically created by Sequelize, though best practice would be to define the primary key ourselves
   {
+    //title VARCHAR(255) 
     title: {
       type: DataTypes.STRING
     },
@@ -33,8 +34,10 @@ Book.init(
     sequelize,
     // Set to false to remove `created_at` and `updated_at` fields
     timestamps: false,
+    //CHANGING CAMEL CASING TO IS_PAPERBACK
     underscored: true,
     modelName: 'book'
+    //MODEL IS A TABLE --- SO BOOK = NAME OF TABLE
   }
 );
 

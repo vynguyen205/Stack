@@ -3,13 +3,34 @@ const Book = require('../../models/Book');
 
 // TODO finish the PUT route to UPDATE a book in the database with a matching book_id
 router.put('/:book_id', (req, res) => {
-  
+  Book.update(
+    { title: req.body.title },
+    { where: {book_id: req.params['book_id']}}
+  )
+  .then(data => {
+    console.log(data);
+    res.json("It worked!");
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err); 
+  })
   
 });
 
 // TODO finish the DELETE route to DELETE a book in the database with a matching book_id
 router.delete('/:book_id', (req, res) => {
-  
+  Book.destroy(
+    { where: {book_id: req.params['book_id']}}
+  )
+  .then(data => {
+    console.log(data);
+    res.json("Delete a book sucessful!");
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err); 
+  })
 });
 
 router.post('/seed', (req, res) => {

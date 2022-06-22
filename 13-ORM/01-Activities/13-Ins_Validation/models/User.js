@@ -13,10 +13,12 @@ User.init(
     },
     username: {
       type: DataTypes.STRING,
+
+      unique: true
     },
     email: {
       type: DataTypes.STRING,
-      // prevents duplicate email addresses in DB
+      // prevents duplicate email addresses in DB. ONE OF A KIND ONLY
       unique: true,
       // checks for email format (foo@bar.com)
       validate: {
