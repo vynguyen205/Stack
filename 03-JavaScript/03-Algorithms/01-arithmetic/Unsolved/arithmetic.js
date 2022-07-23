@@ -1,9 +1,19 @@
 // Fill in the body of each function with the code required
 
-var add = function(num1, num2) {};
+//function expression can't be invoked before defined
+var add = function(num1, num2) {
+    return num1+num2
+};
+add(1,2)
 
-var subtract = function(num1, num2) {};
+var subtract = function(num1, num2) {
+    return num1-num2
+};
 
-var multiply = function(num1, num2) {};
+var multiply = function(num1, num2) {
+    return num1*num2
+};
 
-var divide = function(num1, num2) {};
+var divide = function(num1, num2) {
+    return num1/num2
+};
