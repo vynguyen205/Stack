@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 // TODO: Add a comment describing the functionality of the code below
+//everything in mongoose starts with a schema.
 const bookSchema = new mongoose.Schema({
   title: { type: String, required: true },
   author: { type: String, required: false },
@@ -12,11 +13,13 @@ const bookSchema = new mongoose.Schema({
 });
 
 // TODO: Add a comment describing the functionality of the code below
+//when you call mongoose on a schema, mongoose compiles a model
 const Book = mongoose.model('Book', bookSchema);
 
 const handleError = (err) => console.error(err);
 
 // TODO: Add a comment describing the functionality of the code below
+//create a new document of the book model
 Book.create(
   {
     title: 'Diary of Anne Frank',

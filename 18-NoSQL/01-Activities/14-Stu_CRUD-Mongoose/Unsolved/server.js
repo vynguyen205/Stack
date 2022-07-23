@@ -59,10 +59,21 @@ app.delete('/find-one-delete/:genre', (req, res) => {
   });
 });
 
-app.post('/find-one-update/:genre', (req, res) => {
+app.post('/find-one-update/:genre', async (req, res) => {
   // TODO: Write a route that will find the first instance of a document that contains a name with the value equal to 'Kids'
-  // Update that name with the value given from the URL param
-  // Return the updated document
+  try {
+    const genreData = await Genre.findOneAndUpdate(
+      // Update that name with the value given from the URL param
+      { name: "Kids" }, 
+      { $set: {name: req.params.genre} }
+      )
+      // Return the updated document
+      res.json(genreData)
+
+  } catch (err) {
+    console.error(err)
+    res.json(`🚨 Looks like there's an err!`)
+  }
 });
 
 db.once('open', () => {

@@ -11,6 +11,7 @@ app.use(express.json());
 
 app.get('/all-books', (req, res) => {
   // TODO: Add a comment describing the functionality of the code below
+  //this is to find all the books
   Book.find({}, (err, result) => {
     if (err) {
       res.status(500).send({ message: 'Internal Server Error' });
