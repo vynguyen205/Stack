@@ -3,11 +3,18 @@ import React from 'react';
 import '../styles/Navbar.css';
 
 // TODO: Create a styles object called "styles"
+const styles = {
+  navBar: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    background: 'green',
+  }
+}
 
 function Navbar() {
   // TODO: Add a style attribute to `nav`
   return (
-    <nav className="navbar">
+    <nav style= {styles.navBar} className="navbar">
       <a href="/">Welcome</a>
     </nav>
   );

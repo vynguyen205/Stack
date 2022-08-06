@@ -11,6 +11,8 @@ import API from '../utils/API';
 const OmdbContainer = () => {
   const [result, setResult] = useState({});
   const [search, setSearch] = useState('');
+  const [timeoutKey, setTimeoutKey] = useState();
+
 
   // When the search form is submitted, use the API.search method to search for the movie(s)
   const searchMovie = (query) =>
@@ -21,16 +23,22 @@ const OmdbContainer = () => {
   // TODO: Fix the useEffect hook running after every
   useEffect(() => {
     searchMovie('The Matrix');
-  });
+  }, []);
+
+  // [] means that this useEffect will only run once
 
   // TODO: Fix the handleInputChange function
-  const handleInputChange = (e) => console.log(e.target.value);
-
-  // TODO: Fix the handleFormSubmit function not actually searching for the movie
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
+  const handleInputChange = (e) => {
     setSearch(e.target.value);
-  };
+    clearTimeout(timeoutKey);
+   setTimeoutKey(timeoutKey= setTimeout(() => {searchMovie(search), 750}));
+  }
+  // TODO: Fix the handleFormSubmit function not actually searching for the movie
+  // const handleFormSubmit = (e) => {
+  //   e.preventDefault();
+  //   searchMovie(search);
+  //   setSearch('');
+  // };
 
   // Destructure the result object to make the code more readable, assign them to empty strings to start
   const {
@@ -68,7 +76,7 @@ const OmdbContainer = () => {
             <SearchForm
               value={search}
               handleInputChange={handleInputChange}
-              handleFormSubmit={handleFormSubmit}
+              // handleFormSubmit={handleFormSubmit}
             />
           </Card>
         </Col>
