@@ -35,6 +35,7 @@ Refer to the documentation:
 If you have completed this activity, work through the following challenge with your partner to further your knowledge:
 
 * What are the pros and cons of GraphQL vs. REST? 
+<!-- GraphQL stability are less error prone, automatic validation and type checking and Rest are better choice for complex queries. -->
 
 Use [Google](https://www.google.com) or another search engine to research this.
 

@@ -20,10 +20,13 @@ const resolvers = {
   },
   Mutation: {
     addSchool: async (parent, { name, location, studentCount }) => {
-      return await School.create({ name, location, studentCount });
+      return await School.create({ name, location, studentCount }); 
     },
     updateClass: async (parent, { id, building }) => {
-      return await Class.findOneAndUpdate({ _id: id }, { building });
+      return await Class.findOneAndUpdate({ _id: id }, { building }, { new: true });
+    },
+    updateProfessor: async (parent, { id, professor }) => {
+      return await Professor.findOneAndUpdate({ _id: id }, { professor: ProfessorInput! }, professor, { new: true }).populate('classes');
     }
   }
 };

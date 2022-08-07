@@ -1,0 +1,10 @@
+
+query professors {
+  professors {
+    name
+    classes {
+      name
+    }
+  }
+}
+

@@ -26,6 +26,14 @@ const typeDefs = gql`
     classes: [Class]
   }
 
+  input ProfessorInput {
+    _id: ID
+    name: String
+    officeHours: String
+    officeLocation: String
+    studentScore: Float
+  }
+
   type Query {
     schools: [School]
     classes: [Class]
@@ -36,6 +44,7 @@ const typeDefs = gql`
   type Mutation {
     addSchool(name: String!, location: String!, studentCount: Int!): School
     updateClass(id: ID!, building: String!): Class
+    updateProfessor( id: ID!): Professor
   }
 `;
 
