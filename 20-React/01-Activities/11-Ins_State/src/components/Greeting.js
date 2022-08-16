@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 export default function Greeting() {
   // To set a state variable using `useState`, we give our variable a name of `greeting` and a function to update it.
   // We also provide an initial value
-  const [greeting, setGreeting] = useState('Welcome! React state is awesome!');
+  const [greeting, setGreeting] = useState('Welcome! React state is awesome!'); // useState will persist and it won't get changed when the component is re-rendered
 
   return (
     <div className="card text-center">
@@ -13,9 +13,12 @@ export default function Greeting() {
       </div>
       <div className="card-body">
         <p className="card-text" style={{ fontSize: '50px' }}>
+          {/*  */}
           {greeting}
         </p>
       </div>
     </div>
   );
 }
+
+// state is a hook.

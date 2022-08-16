@@ -8,6 +8,7 @@ const alertType = "danger"
 
 // We then return Alert, we pass it a prop, "message" set to the value of our message variable
 // We also pass a type prop to the component set to the value of "alertType"
+// this is the parent component
 function App() {
   return <Alert type={alertType} message={message} />;
 }
