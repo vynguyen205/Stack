@@ -15,7 +15,8 @@ function App() {
       name: "resume"
     }
   ]);
-
+// `what is the use of current page and set current page`?
+// the use of current page is to set the current page to the page that is clicked
   const [currentPage, setCurrentPage] = useState(pages[0]);
 
   return (
