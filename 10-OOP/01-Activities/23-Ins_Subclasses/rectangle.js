@@ -28,7 +28,7 @@ class Person{
   }
 
   getOlder(){
-    this.age++
+    this.age++;
   }
 }
 
